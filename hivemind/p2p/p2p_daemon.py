@@ -97,6 +97,7 @@ class P2P:
         startup_timeout: float = 15,
         tls: bool = True,
         use_auto_relay: bool = False,
+        use_hole_punching: bool = False,
         use_ipfs: bool = False,
         use_relay: bool = True,
         persistent_conn_max_msg_size: int = DEFAULT_MAX_MSG_SIZE,
@@ -134,6 +135,7 @@ class P2P:
                           If you are behind NAT/firewall yourself,
                           please pass `use_auto_relay=True` to become reachable.
         :param use_auto_relay: Look for libp2p relays to become reachable if we are behind NAT/firewall
+        :param use_hole_punching: Enables hole punching using DCUtR for NAT/firewall traversal
         :param quic: Deprecated, has no effect since libp2p 0.17.0
         :param use_relay_hop: Deprecated, has no effect since libp2p 0.17.0
         :param use_relay_discovery: Deprecated, has no effect since libp2p 0.17.0
@@ -192,6 +194,7 @@ class P2P:
                         initial_peers=initial_peers,
                         tls=tls,
                         use_auto_relay=use_auto_relay,
+                        use_hole_punching=use_hole_punching,
                         use_ipfs=use_ipfs,
                         use_relay=use_relay,
                     ):
@@ -206,6 +209,7 @@ class P2P:
             str(p2pd_path),
             autoRelay=use_auto_relay,
             autonat=auto_nat,
+            holePunchingEnabled=use_hole_punching,
             b=need_bootstrap,
             connManager=conn_manager,
             idleTimeout=f"{idle_timeout}s",
@@ -253,6 +257,7 @@ class P2P:
         initial_peers: Optional[Sequence[Union[Multiaddr, str]]],
         tls: bool,
         use_auto_relay: bool,
+        use_hole_punching: bool,
         use_ipfs: bool,
         use_relay: bool,
     ) -> bool:
@@ -264,6 +269,7 @@ class P2P:
             dht_mode="client",
             tls=tls,
             use_auto_relay=use_auto_relay,
+            use_hole_punching=use_hole_punching,
             use_ipfs=use_ipfs,
             use_relay=use_relay,
         )
