@@ -14,17 +14,17 @@ from setuptools import find_packages, setup
 from setuptools.command.build_py import build_py
 from setuptools.command.develop import develop
 
-P2PD_VERSION = "v0.5.0.hivemind1"
+P2PD_VERSION = "v0.8.2"
 
-P2PD_SOURCE_URL = f"https://github.com/learning-at-home/go-libp2p-daemon/archive/refs/tags/{P2PD_VERSION}.tar.gz"
-P2PD_BINARY_URL = f"https://github.com/learning-at-home/go-libp2p-daemon/releases/download/{P2PD_VERSION}/"
+P2PD_SOURCE_URL = f"https://github.com/AmbientCrypto/go-libp2p-daemon/archive/refs/tags/{P2PD_VERSION}.tar.gz"
+P2PD_BINARY_URL = f"https://github.com/AmbientCrypto/go-libp2p-daemon/releases/download/{P2PD_VERSION}/"
 
 # The value is sha256 of the binary from the release page
 P2P_BINARY_HASH = {
-    "p2pd-darwin-amd64": "fe00f9d79e8e4e4c007144d19da10b706c84187b3fb84de170f4664c91ecda80",
-    "p2pd-darwin-arm64": "0404981a9c2b7cab5425ead2633d006c61c2c7ec85ac564ef69413ed470e65bd",
-    "p2pd-linux-amd64": "42f8f48e62583b97cdba3c31439c08029fb2b9fc506b5bdd82c46b7cc1d279d8",
-    "p2pd-linux-arm64": "046f18480c785a84bdf139d7486086d379397ca106cb2f0191598da32f81447a",
+    "p2pd-darwin-amd64": "d4446ad2a621e85c9a60c64e1c7780c13c147b42038f85ac0f35ea6fa709e2d2",
+    "p2pd-darwin-arm64": "c2873ac39e461b167fce6ade24afd8e1f7a7295f224fc86a29ca949259d49576",
+    "p2pd-linux-amd64": "3db8e2c349b3df15449912a5f7ef77c36986829242cf1333eba05cfade219bbc",
+    "p2pd-linux-arm64": "0d482094e719f762e86fa7122d9c45645f1c28b1cd645a91c369d91ad5b5bd31",
 }
 
 here = os.path.abspath(os.path.dirname(__file__))
